@@ -48,13 +48,13 @@
                         <Insets left="25.0" top="40.0" />
                      </HBox.margin>
                   </Button>
-                  <ImageView fitHeight="110.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../eclipse-workspace-tdp/58321311-extraterrestrial-icona-piatta-alieno-faccia-o-la-testa-simbolo-per-le-applicazioni-e-siti-web.jpg" />
-                     </image>
+                  <ImageView fitHeight="110.0" fitWidth="129.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <image>
+                        <Image url="@../58321311-extraterrestrial-icona-piatta-alieno-faccia-o-la-testa-simbolo-per-le-applicazioni-e-siti-web.jpg" />
+                     </image>
                   </ImageView>
                </children>
             </HBox>
