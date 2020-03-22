@@ -1,5 +1,8 @@
 package it.polito.tdp.alien.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Classe contenente parole aliene e traduzione in italiano
  * 
@@ -9,28 +12,29 @@ package it.polito.tdp.alien.model;
 public class Word {
 
 	String ParolaAliena;
-	String Traduzione;
+	List<String> Traduzione;
 
 	public Word(String parolaAliena, String traduzione) {
 		super();
 		ParolaAliena = parolaAliena;
-		Traduzione = traduzione;
+		Traduzione = new LinkedList<>();
+		Traduzione.add(traduzione);
 	}
 
 	public String getParolaAliena() {
 		return ParolaAliena;
 	}
 
-	public String getTraduzione() {
-		return Traduzione;
-	}
-
 	public void setParolaAliena(String parolaAliena) {
 		ParolaAliena = parolaAliena;
 	}
 
+	public List<String> getTraduzione() {
+		return Traduzione;
+	}
+
 	public void setTraduzione(String traduzione) {
-		Traduzione = traduzione;
+		Traduzione.add(traduzione);
 	}
 
 	@Override
@@ -43,6 +47,19 @@ public class Word {
 			}
 		}
 		return false;
+	}
+
+	public String getLista() {
+		String s = null;
+		for (String c : Traduzione) {
+			if (s == null) {
+				s = c;
+
+			} else {
+				s += "; " + c;
+			}
+		}
+		return s;
 	}
 
 }

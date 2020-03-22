@@ -47,8 +47,8 @@ public class FXMLController {
 				if(st.countTokens()==2) {
 					parola = st.nextToken();
 				traduzione = st.nextToken();
-				Word w = new Word(parola, traduzione);
-				this.dictionary.addWord(w);
+				
+				this.dictionary.addWord(parola,traduzione);
 				}else {
 					this.txtResult.setText("Non inserire lo spazio dopo la parola che vuoi tradurre");
 				}
@@ -58,7 +58,8 @@ public class FXMLController {
 				if( this.dictionary.translateWord(parola)==null) {
 					this.txtResult.setText("La parola non è stata inserita nel vocabolario");
 				}
-				this.txtResult.setText("La traduzioe di " + parola.toUpperCase() + " è: "
+				
+				this.txtResult.setText("La traduzioe di " + parola.toUpperCase() + " è/sono: "
 						+ this.dictionary.translateWord(parola).toUpperCase());
 			}else {
 				this.txtResult.setText("Prima di tradurre devi inserire delle parole nel vocabolario");
