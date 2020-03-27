@@ -38,36 +38,36 @@ public class FXMLController {
 	void doTranslate(ActionEvent event) {
 		this.txtResult.clear();
 		String input = this.txtParola.getText();
-		
-		if (input.matches("[a-zA-Z\\s]*")==true) {
+
+		if (input.matches("[a-zA-Z\\s]*") == true) {
 			String parola;
 			String traduzione = "";
 			if (input.contains(" ")) {
 				StringTokenizer st = new StringTokenizer(input, " ");
-				if(st.countTokens()==2) {
+				if (st.countTokens() == 2) {
 					parola = st.nextToken();
-				traduzione = st.nextToken();
-				
-				this.dictionary.addWord(parola,traduzione);
-				}else {
+					traduzione = st.nextToken();
+
+					this.dictionary.addWord(parola, traduzione);
+				} else {
 					this.txtResult.setText("Non inserire lo spazio dopo la parola che vuoi tradurre");
 				}
-				
-			} else if(this.dictionary.size()!=0){
+
+			} else if (this.dictionary.size() != 0) {
 				parola = input;
-				if( this.dictionary.translateWord(parola)==null) {
+				if (this.dictionary.translateWord(parola) == null) {
 					this.txtResult.setText("La parola non è stata inserita nel vocabolario");
 				}
-				
+
 				this.txtResult.setText("La traduzioe di " + parola.toUpperCase() + " è/sono: "
 						+ this.dictionary.translateWord(parola).toUpperCase());
-			}else {
+			} else {
 				this.txtResult.setText("Prima di tradurre devi inserire delle parole nel vocabolario");
 			}
 		} else {
 			this.txtResult.setText("Devi inserire solo caratteri alfabetici");
 		}
-this.txtParola.clear();
+		this.txtParola.clear();
 	}
 
 	@FXML
